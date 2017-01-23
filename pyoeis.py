@@ -35,7 +35,7 @@ def get_oeis_seq_meta(sid):
 
 def get_oeis_seq_table(sid):
     """
-        Gets the terms of the sequence #sid (shoud regex match 'A(\d+) (.*)')
+        Gets the terms of the sequence #sid (should regex match 'A(\d+) (.*)')
         from its remote b-file, e.g. the b-file for the sequence A001221 is
         located at
 
