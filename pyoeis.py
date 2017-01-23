@@ -48,11 +48,11 @@ def get_oeis_seq_table(sid):
     table = OrderedDict()
 
     res = requests.get('http://oeis.org/{}/b{}.txt'.format(sid, sid[1:]))
-    lines = [s for s in res.text.split('\n') if s]
+    lines = [s for s in res.text.split('\n') if s and re.match(r'(\d+) (\d+)', s)]
 
     for li in lines:
         n, an = map(int, li.split(' '))
-        seq[n] = an
+        table[n] = an
 
     return table
 
