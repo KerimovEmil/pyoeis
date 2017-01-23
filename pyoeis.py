@@ -40,7 +40,7 @@ def get_oeis_sequence_meta(sid):
     )
 
 
-def get_oeis_sequence_table(sid):
+def load_oeis_sequence_table(sid):
     """
         Gets the table of terms of the sequence #sid (should regex match
         'A(\d+) (.*)') from its remote b-file, e.g. the b-file for the
@@ -73,7 +73,7 @@ def save_oeis_sequence_table(
         Saves the sequence table/dict as a local JSON file (full path required,
         including file name).
     """
-    table = get_oeis_sequence_table(sid)
+    table = load_oeis_sequence_table(sid)
 
     with codecs.open(fullpath, 'w', 'utf-8') as f:
         json.dump(table, f)
